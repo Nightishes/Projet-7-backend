@@ -6,6 +6,10 @@ const path = require('path');
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
+
 mongoose.connect('mongodb+srv://qbathany:oQIsdlLzU1YsiTG8@cluster0.i1fenpo.mongodb.net/?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
