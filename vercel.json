@@ -7,19 +7,17 @@
       "use": "@vercel/node"
     }
   ],
+
   "routes":[
     {
       "src": "/(.*)",
       "dest": "/"
     }
   ],
-  
+
   "headers": [
-
     {
-
       "source": "/api/(.*)",
-
       "headers": [
 
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
@@ -35,4 +33,5 @@
     }
 
   ]
+
   }
