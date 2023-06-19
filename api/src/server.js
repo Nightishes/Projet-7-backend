@@ -54,4 +54,4 @@ server.on('listening', () => {
 
 server.listen(port);
 
-export default server
+module.exports = server;

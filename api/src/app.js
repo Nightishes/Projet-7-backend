@@ -23,4 +23,4 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 
 
   
-export default app;
+module.exports = app;
