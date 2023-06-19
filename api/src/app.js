@@ -17,7 +17,6 @@ mongoose.connect('mongodb+srv://qbathany:oQIsdlLzU1YsiTG8@cluster0.i1fenpo.mongo
 app.use(express.json()); 
 
 
-
 app.use ('/api/books', books)
 app.use ('/api/auth', authentication)
 app.use('/images', express.static(path.join(__dirname, 'images')));
