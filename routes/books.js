@@ -2,17 +2,18 @@ const express = require('express')
 const router = express.Router()
 const bookController = require('../controllers/book')
 const auth = require('../middleware/auth');
-const multer = require('../middleware/multer-config');
+const cloudinary = require('../middleware/cloudinary')
+// const multer= require('../middleware/multer-config')
 
 router.route('/')
   .get(bookController.getAllBooks)
-  .post(auth, multer, bookController.createBook);
+  .post(auth, cloudinary, bookController.createBook);
 
 router.get('/bestrating', bookController.bestRatedBooks)
 
 router.route('/:id')
       .get(bookController.getOneBook)
-      .put(auth, multer, bookController.updateOneBook)
+      .put(auth, cloudinary, bookController.updateOneBook)
       .delete(auth, bookController.deleteOneBook)
 
  

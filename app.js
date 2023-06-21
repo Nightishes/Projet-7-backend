@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const books = require('./routes/books');
 const authentication = require('./routes/users');
 const path = require('path');
-
 const app = express();
 
 mongoose.connect('mongodb+srv://qbathany:oQIsdlLzU1YsiTG8@cluster0.i1fenpo.mongodb.net/?retryWrites=true&w=majority',
@@ -25,7 +24,7 @@ app.use((req, res, next) => {
 
 app.use ('/api/books', books)
 app.use ('/api/auth', authentication)
-app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use ('/images', express(path.join(__dirname, 'images')));
 
 
   
