@@ -10,14 +10,14 @@ exports.getAllBooks = (req, res) =>{
     .catch(error => res.status(400).json({ error }));
   }
 
-exports.createBook = (req, res, next) =>{
+exports.createBook = (req, res) =>{
   const bookObject = JSON.parse(req.body.book);
   delete bookObject._id;
   delete bookObject._userId;
     const book = new Book({
       ...req.body,
       userId: req.auth.userId,
-      imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
+      imageUrl: `${req.file}`,
       title: bookObject.title,
       author : bookObject.author,
       year: bookObject.year,
@@ -42,7 +42,7 @@ exports.getOneBook = (req, res, next) =>{
 exports.updateOneBook = (req, res, next) =>{
   const bookObject = req.file ? {
     ...JSON.parse(req.body.book),
-    imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+    imageUrl: `${req.file}`
   } :
   {   ...req.body
   };

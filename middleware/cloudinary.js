@@ -22,15 +22,15 @@ const handler = async (req, res, next) => {
     const b64 = Buffer.from(req.file.buffer).toString("base64");
     let dataURI = "data:" + req.file.mimetype + ";base64," + b64;
     const imageUrl = await handleUpload(dataURI);
-    res.json(imageUrl);
-    console.log(imageUrl)
+    console.log(imageUrl.url)
+    req.file = imageUrl.url
   } catch (error) {
     console.log(error);
     res.send({
       message: error.message,
     });
   }
-  next();
+  next()
 };
 
 
