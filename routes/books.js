@@ -3,7 +3,7 @@ const router = express.Router()
 const bookController = require('../controllers/book')
 const auth = require('../middleware/auth');
 const cloudinary = require('../middleware/cloudinary')
-// const multer= require('../middleware/multer-config')
+
 
 router.route('/')
   .get(bookController.getAllBooks)
