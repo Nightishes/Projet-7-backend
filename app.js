@@ -4,7 +4,6 @@ const books = require('./routes/books');
 const authentication = require('./routes/users');
 const path = require('path');
 const app = express();
-const allowCors = require('./api/cors')
 
 mongoose.connect('mongodb+srv://qbathany:oQIsdlLzU1YsiTG8@cluster0.i1fenpo.mongodb.net/?retryWrites=true&w=majority',
   { useNewUrlParser: true,
