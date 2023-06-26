@@ -88,6 +88,7 @@ exports.deleteOneBook = (req, res, next) =>{
 exports.updateRatings = (req, res) =>{
   Book.findOne({ _id: req.params.id})
     .then(book=>{
+      console.log(req)
       console.log(book.rating)
       book.ratings.push({userId: req.auth.userId, grade: req.body.rating})  
       let totalRating = 0;
