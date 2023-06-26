@@ -8,9 +8,8 @@ cloudinary.config({
 async function handleUpload(file) {
   const res = await cloudinary.uploader.upload(file, {
     resource_type: "auto",
-    aspect_ratio :"4:3", crop: "fill",
     width: 260, crop: "fill",
-    height: "206", crop:"fill"
+    height: 206, crop:"fill"
   });
   return res;
 }
