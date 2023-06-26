@@ -23,7 +23,7 @@ const handler = async (req, res, next) => {
     let dataURI = "data:" + req.file.mimetype + ";base64," + b64;
     const imageUrl = await handleUpload(dataURI);
     console.log(imageUrl.url)
-    req.file = imageUrl.url
+    req.file = imageUrl.secure_url
   } catch (error) {
     console.log(error);
     res.send({
